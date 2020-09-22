@@ -40,7 +40,7 @@ if [ $k -eq 0 ] ;
 then
 echo "one more hint -- it is a even number "
 else
-    echo "one more hint -- it is a even number"
+    echo "one more hint -- it is a odd number"
     fi
 }
 randomlast()

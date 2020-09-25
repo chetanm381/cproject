@@ -18,6 +18,30 @@ then
 echo "take a little lower guess"
 fi
 }
+random2()
+{ 
+    echo "give your number between 1 to 100 "
+read -p "" num 
+
+if [ $num -eq $1 ] ;
+then 
+echo "yes you have guessed it right"
+exit 
+fi
+a=$(($1%5))
+if [ $a -eq 0 ] ;
+then 
+echo "it is a number divisible by 5"
+fi 
+if [ $num -le $1 ] ;
+then
+echo "now, take a little higher guess"
+fi
+if [ $num -ge $1 ] ;
+then 
+echo "now, take a little lower guess"
+fi
+}
 random3()
 { 
     echo "give your number between 1 to 100 "
@@ -35,7 +59,7 @@ if [ $num -ge $1 ] ;
 then 
 echo "take a little lower guess"
 fi
-k=$((num%2))
+k=$(($1%2))
 if [ $k -eq 0 ] ;
 then
 echo "one more hint -- it is a even number "
@@ -46,7 +70,9 @@ else
 randomlast()
 {
       echo "give your number between 1 to 100 "
+      echo "this is your last chance ,please be careful."
 read -p "" num 
+
 if [ $num -eq $1 ] ;
 then 
 echo "yes you have guessed it right"
@@ -58,10 +84,10 @@ fi
 }
 
 echo "we are gonna play this game "
-in=$((1 + RANDOM % 100))
-
+in=45
+$((1 + RANDOM % 100))
 random $in
-random $in
+random2 $in
 random3 $in
 random $in
 randomlast $in

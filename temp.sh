@@ -1,7 +1,7 @@
 #!/bin/bash
 
 random()
-{ 
+{  
     echo "give your number between 1 to 100 "
 read -p "" num 
 if [ $num -eq $1 ] ;
@@ -19,7 +19,7 @@ echo "take a little lower guess"
 fi
 }
 random2()
-{ 
+{  
     echo "give your number between 1 to 100 "
 read -p "" num 
 
@@ -68,7 +68,7 @@ else
     fi
 }
 randomlast()
-{
+{ 
       echo "give your number between 1 to 100 "
       echo "this is your last chance ,please be careful."
 read -p "" num 
@@ -85,10 +85,15 @@ fi
 
 echo "we are gonna play this game "
 in=$((1 + RANDOM % 100))
-random $in
-random2 $in
-random3 $in
-random $in
-randomlast $in
+for c in 1 2 3 4 5
+do 
+case $c in 
 
+1) random $in ;;
+2) random2 $in ;;
+3) random3 $in ;;
+4) random $in ;;
+5) randomlast $in ;;
+esac 
+done
 exit
